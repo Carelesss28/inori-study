@@ -1,0 +1,8 @@
+# local-only files; Vercel installs and builds fresh
+node_modules
+.next
+.dist
+.env*
+!.env.example
+*.tsbuildinfo
+public/pdf.worker.min.mjs

@@ -1,0 +1,521 @@
+@import "tailwindcss";
+
+/* "dark:" utilities apply to every dark theme (data-mode is set alongside data-theme) */
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+/* Blossom (light): dusty lavender walls, pink gingham, cream paper */
+:root,
+[data-theme="blossom"] {
+  --c-bg: #efe5ee;
+  --c-bg-deep: #e7dbe7;
+  --c-panel: #faf5f8;
+  --c-panel-2: #f5edf2;
+  --c-line: #e8dce6;
+  --c-line-strong: #d9c9d8;
+  --c-ink: #4a4060;
+  --c-ink-soft: #776d8c;
+  --c-ink-faint: #a79db7;
+  --c-side-1: #9f98ba;
+  --c-side-2: #8a83a6;
+  --c-side-ink: #fbf6fb;
+  --c-side-active: #f6e3ea;
+  --c-pink: #e8a3b1;
+  --c-pink-strong: #d9899b;
+  --c-pink-soft: #f7e1e7;
+  --c-pink-ink: #7b3a52;
+  --c-lav: #8f86ae;
+  --c-lav-soft: #e5deee;
+  --c-rose: #dd96a6;
+  --c-teal: #5e9c94;
+  --c-teal-soft: #dcece9;
+  --c-cream: #fbeee6;
+  --c-paper: #fffdfb;
+  --c-track: #e9e0ea;
+  --c-danger: #c8566a;
+  --c-chart-1: #6b5bb5;
+  --c-chart-2: #d6517d;
+  --c-hero-1: #eadeeb;
+  --c-hero-2: #dccae0;
+  --c-viewer: #8f88a8;
+  --c-viewer-rail: #a9a2c0;
+  --c-shadow: 74 64 96;
+}
+
+/* Dusk (dark) */
+[data-theme="dusk"] {
+  --c-bg: #27223a;
+  --c-bg-deep: #211d31;
+  --c-panel: #322b48;
+  --c-panel-2: #3a3252;
+  --c-line: #443b5e;
+  --c-line-strong: #54496f;
+  --c-ink: #f3eaf3;
+  --c-ink-soft: #c7bbd6;
+  --c-ink-faint: #9489ad;
+  --c-side-1: #3d3556;
+  --c-side-2: #2f2946;
+  --c-side-ink: #f3eaf3;
+  --c-side-active: #54496f;
+  --c-pink: #e59bab;
+  --c-pink-strong: #efb1bf;
+  --c-pink-soft: #4a3651;
+  --c-pink-ink: #2c1b27;
+  --c-lav: #a79ccc;
+  --c-lav-soft: #3f3659;
+  --c-rose: #e59bab;
+  --c-teal: #7fbfb6;
+  --c-teal-soft: #2f4546;
+  --c-cream: #3a3148;
+  --c-paper: #f7f1f4;
+  --c-track: #463d61;
+  --c-danger: #f08a9c;
+  --c-chart-1: #8a78e6;
+  --c-chart-2: #e35a8a;
+  --c-hero-1: #3a3252;
+  --c-hero-2: #2d2742;
+  --c-viewer: #1e1a2c;
+  --c-viewer-rail: #2a2440;
+  --c-shadow: 0 0 0;
+}
+
+/* Sanrio Hello Kitty (light): sugar pink, clean white, red-bow accent */
+[data-theme="kitty"] {
+  --c-bg: #fff2f5;
+  --c-bg-deep: #ffe6ec;
+  --c-panel: #ffffff;
+  --c-panel-2: #fff1f4;
+  --c-line: #ffdbe4;
+  --c-line-strong: #f8bccb;
+  --c-ink: #3b2730;
+  --c-ink-soft: #7a5664;
+  --c-ink-faint: #b38e9b;
+  --c-side-1: #ff8fab;
+  --c-side-2: #f45b80;
+  --c-side-ink: #ffffff;
+  --c-side-active: #fff0f4;
+  --c-pink: #e8344e;
+  --c-pink-strong: #c81e3c;
+  --c-pink-soft: #ffe1e8;
+  --c-pink-ink: #ffffff;
+  --c-lav: #d6336c;
+  --c-lav-soft: #ffe0ea;
+  --c-rose: #ff7f9e;
+  --c-teal: #2a9d86;
+  --c-teal-soft: #daf2ec;
+  --c-cream: #fff6d6;
+  --c-paper: #fffefe;
+  --c-track: #ffe0e8;
+  --c-danger: #c62a3f;
+  --c-chart-1: #5b5fc7;
+  --c-chart-2: #d9324f;
+  --c-hero-1: #ffe8ef;
+  --c-hero-2: #ffd2de;
+  --c-viewer: #f7a3b8;
+  --c-viewer-rail: #fbc4d2;
+  --c-shadow: 120 40 60;
+}
+
+/* Sanrio Cinnamoroll (light): sky blue, fluffy white clouds, blue gingham, blush cheeks */
+[data-theme="cinnamoroll"] {
+  --c-bg: #dde9f8;
+  --c-bg-deep: #cfe0f5;
+  --c-panel: #f8fbff;
+  --c-panel-2: #eef5fd;
+  --c-line: #d6e5f6;
+  --c-line-strong: #bcd3ee;
+  --c-ink: #34486a;
+  --c-ink-soft: #647a9c;
+  --c-ink-faint: #9cadc6;
+  --c-side-1: #a9c8ef;
+  --c-side-2: #8db2e4;
+  --c-side-ink: #ffffff;
+  --c-side-active: #ffffff;
+  --c-pink: #9cc3f0;
+  --c-pink-strong: #5f93d6;
+  --c-pink-soft: #e2edfb;
+  --c-pink-ink: #203c66;
+  --c-lav: #6f9bd6;
+  --c-lav-soft: #e1ebf9;
+  --c-rose: #f2aebf;
+  --c-teal: #4c9a92;
+  --c-teal-soft: #dcefed;
+  --c-cream: #fdf1e0;
+  --c-paper: #ffffff;
+  --c-track: #dbe7f6;
+  --c-danger: #d0566c;
+  --c-chart-1: #3f62c4;
+  --c-chart-2: #d0577f;
+  --c-hero-1: #e4eefb;
+  --c-hero-2: #c9ddf5;
+  --c-viewer: #a6c3ea;
+  --c-viewer-rail: #c6daf3;
+  --c-shadow: 60 90 140;
+}
+
+/* Violet Evergarden (dark): midnight navy, letter-paper cream, brooch gold and emerald */
+[data-theme="evergarden"] {
+  --c-bg: #121a2e;
+  --c-bg-deep: #0d1424;
+  --c-panel: #1a2440;
+  --c-panel-2: #202c4c;
+  --c-line: #2c3a5f;
+  --c-line-strong: #3b4c78;
+  --c-ink: #f4ead6;
+  --c-ink-soft: #cdc2a9;
+  --c-ink-faint: #8f8f99;
+  --c-side-1: #1d2a4d;
+  --c-side-2: #121b33;
+  --c-side-ink: #f4ead6;
+  --c-side-active: #33426d;
+  --c-pink: #d4af6a;
+  --c-pink-strong: #e6c27f;
+  --c-pink-soft: #3a3524;
+  --c-pink-ink: #1a1408;
+  --c-lav: #7fc0aa;
+  --c-lav-soft: #203a39;
+  --c-rose: #d4af6a;
+  --c-teal: #6fc2a8;
+  --c-teal-soft: #1f3a36;
+  --c-cream: #2a2f45;
+  --c-paper: #f6efe0;
+  --c-track: #2b385c;
+  --c-danger: #f0847d;
+  --c-chart-1: #a8862f;
+  --c-chart-2: #5d8ee6;
+  --c-hero-1: #1d2a4d;
+  --c-hero-2: #121b33;
+  --c-viewer: #0e1527;
+  --c-viewer-rail: #17213b;
+  --c-shadow: 0 0 0;
+}
+
+/* Japanese Spring (light): washi cream, sakura pink, fresh matcha */
+[data-theme="sakura"] {
+  --c-bg: #f7f3ec;
+  --c-bg-deep: #efe8dc;
+  --c-panel: #fffdf8;
+  --c-panel-2: #f7f1e7;
+  --c-line: #ebe1d1;
+  --c-line-strong: #d9cbb4;
+  --c-ink: #3a3431;
+  --c-ink-soft: #6d625a;
+  --c-ink-faint: #a2978a;
+  --c-side-1: #8fae7e;
+  --c-side-2: #6f915f;
+  --c-side-ink: #fbfaf4;
+  --c-side-active: #fbe7eb;
+  --c-pink: #f1a7b8;
+  --c-pink-strong: #d6728c;
+  --c-pink-soft: #fbe5ea;
+  --c-pink-ink: #6a2a3a;
+  --c-lav: #6f915f;
+  --c-lav-soft: #e4eddb;
+  --c-rose: #e891a6;
+  --c-teal: #4f8f7a;
+  --c-teal-soft: #dcece4;
+  --c-cream: #fbf1dc;
+  --c-paper: #fffefa;
+  --c-track: #ebe3d5;
+  --c-danger: #c0504d;
+  --c-chart-1: #3f6fb0;
+  --c-chart-2: #c9506f;
+  --c-hero-1: #fbe9ec;
+  --c-hero-2: #eaf1e2;
+  --c-viewer: #a8bf98;
+  --c-viewer-rail: #c4d6b6;
+  --c-shadow: 80 70 60;
+}
+
+/* Cyberpunk (dark): neon magenta, cyan and acid green on near-black */
+[data-theme="cyberpunk"] {
+  --c-bg: #0b0b14;
+  --c-bg-deep: #07070d;
+  --c-panel: #12121f;
+  --c-panel-2: #1a1a2c;
+  --c-line: #26263d;
+  --c-line-strong: #3a3a5c;
+  --c-ink: #e9f6ff;
+  --c-ink-soft: #a3b6cc;
+  --c-ink-faint: #6a7490;
+  --c-side-1: #16142c;
+  --c-side-2: #0a0a16;
+  --c-side-ink: #e9f6ff;
+  --c-side-active: #2a1640;
+  --c-pink: #ff2bd6;
+  --c-pink-strong: #ff6ae3;
+  --c-pink-soft: #33113d;
+  --c-pink-ink: #14001a;
+  --c-lav: #00e5ff;
+  --c-lav-soft: #0b2e3a;
+  --c-rose: #ff2bd6;
+  --c-teal: #3dff9e;
+  --c-teal-soft: #0e3324;
+  --c-cream: #1f1a2e;
+  --c-paper: #eef3ff;
+  --c-track: #24243a;
+  --c-danger: #ff4d6d;
+  --c-chart-1: #008fd6;
+  --c-chart-2: #e5359a;
+  --c-hero-1: #1d1035;
+  --c-hero-2: #0b0b14;
+  --c-viewer: #07070d;
+  --c-viewer-rail: #111120;
+  --c-shadow: 0 0 0;
+}
+
+@theme inline {
+  --color-bg: var(--c-bg);
+  --color-bg-deep: var(--c-bg-deep);
+  --color-panel: var(--c-panel);
+  --color-panel-2: var(--c-panel-2);
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-ink-faint: var(--c-ink-faint);
+  --color-side-1: var(--c-side-1);
+  --color-side-2: var(--c-side-2);
+  --color-side-ink: var(--c-side-ink);
+  --color-side-active: var(--c-side-active);
+  --color-pink: var(--c-pink);
+  --color-pink-strong: var(--c-pink-strong);
+  --color-pink-soft: var(--c-pink-soft);
+  --color-pink-ink: var(--c-pink-ink);
+  --color-lav: var(--c-lav);
+  --color-lav-soft: var(--c-lav-soft);
+  --color-rose: var(--c-rose);
+  --color-teal: var(--c-teal);
+  --color-teal-soft: var(--c-teal-soft);
+  --color-cream: var(--c-cream);
+  --color-paper: var(--c-paper);
+  --color-track: var(--c-track);
+  --color-danger: var(--c-danger);
+  --color-chart-1: var(--c-chart-1);
+  --color-chart-2: var(--c-chart-2);
+  --color-hero-1: var(--c-hero-1);
+  --color-hero-2: var(--c-hero-2);
+  --color-viewer: var(--c-viewer);
+  --color-viewer-rail: var(--c-viewer-rail);
+  --font-sans: var(--font-nunito);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --fs is the user's text-size choice (Profile → Settings); everything is rem-based */
+html {
+  color-scheme: light;
+  font-size: calc(16px * var(--fs, 1));
+}
+
+/* Big screens: grow the whole UI so it fills the display */
+@media (min-width: 1600px) {
+  html {
+    font-size: calc((16px + (100vw - 1600px) * 0.006) * var(--fs, 1));
+  }
+}
+
+html[data-mode="dark"] {
+  color-scheme: dark;
+}
+
+/* neon glow on the main buttons and active nav in Cyberpunk */
+[data-theme="cyberpunk"] .bg-pink {
+  box-shadow: 0 0 14px -2px rgb(255 43 214 / 0.7);
+}
+[data-theme="cyberpunk"] nav a[aria-current="page"] {
+  box-shadow: 0 0 0 1px rgb(0 229 255 / 0.6), 0 0 16px -4px rgb(0 229 255 / 0.8);
+}
+
+body {
+  background: var(--c-bg);
+  color: var(--c-ink);
+  font-family: var(--font-sans), ui-rounded, ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer components {
+  /* soft paper grain, like the wall texture in the reference art (overlay, so it never
+     replaces the element's own background) */
+  .grain {
+    isolation: isolate;
+  }
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: radial-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px),
+      radial-gradient(rgb(0 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 7px 7px, 11px 11px;
+    background-position: 0 0, 3px 5px;
+  }
+
+  .card {
+    background: var(--c-panel);
+    border: 1px solid var(--c-line);
+    border-radius: 18px;
+    box-shadow: 0 1px 2px rgb(var(--c-shadow) / 0.05), 0 8px 24px -16px rgb(var(--c-shadow) / 0.25);
+  }
+
+  .paper {
+    background: var(--c-paper);
+    color: #3f3652;
+    box-shadow: 0 2px 6px rgb(40 30 60 / 0.12), 0 18px 40px -24px rgb(40 30 60 / 0.4);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--c-line-strong);
+  border-radius: 999px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.float {
+  animation: float-y 4s ease-in-out infinite;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pop-in {
+  animation: pop-in 0.22s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float,
+  .pop-in {
+    animation: none;
+  }
+}
+
+html[data-motion="reduce"] *,
+html[data-motion="reduce"] *::before,
+html[data-motion="reduce"] *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* KaTeX inherits the surrounding ink colour */
+.katex {
+  font-size: 1.08em;
+}
+.katex-display {
+  margin: 0.9em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 0;
+}
+
+/* Cinnamoroll: soft cloud puffs on the page background */
+[data-theme="cinnamoroll"] body {
+  background:
+    radial-gradient(60px 26px at 12% 18%, rgb(255 255 255 / 0.75), transparent 70%),
+    radial-gradient(90px 34px at 82% 12%, rgb(255 255 255 / 0.65), transparent 70%),
+    radial-gradient(120px 40px at 70% 88%, rgb(255 255 255 / 0.55), transparent 70%),
+    radial-gradient(80px 30px at 25% 75%, rgb(255 255 255 / 0.5), transparent 70%),
+    var(--c-bg);
+  background-attachment: fixed;
+}
+
+/* with a personal wallpaper, cards turn slightly frosted so the picture peeks through */
+html[data-wallpaper="on"] .card {
+  background: color-mix(in srgb, var(--c-panel) 86%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+/* ---------------------------------------------------------------- theme ambience
+   Particles drift above the page (pointer-events: none). Each particle is an outer
+   element that travels and an inner one that sways/spins, so motions combine. */
+.ambience {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  overflow: hidden;
+  pointer-events: none;
+}
+.amb {
+  position: absolute;
+  top: 0;
+  will-change: transform;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.amb > * {
+  display: block;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes amb-fall {
+  from { transform: translate3d(0, -12vh, 0); }
+  to { transform: translate3d(var(--dx, 0), 112vh, 0); }
+}
+@keyframes amb-rise {
+  from { transform: translate3d(0, 108vh, 0); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  to { transform: translate3d(var(--dx, 0), -12vh, 0); opacity: 0; }
+}
+@keyframes amb-drift {
+  from { transform: translate3d(-25vw, 0, 0); }
+  to { transform: translate3d(125vw, 0, 0); }
+}
+@keyframes amb-sway {
+  0%, 100% { transform: translateX(-14px) rotate(-25deg); }
+  50% { transform: translateX(14px) rotate(35deg); }
+}
+@keyframes amb-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes amb-bob {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-10px) rotate(6deg); }
+}
+@keyframes amb-twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1); }
+}
+@keyframes amb-flicker {
+  0%, 100% { opacity: 0.9; }
+  8% { opacity: 0.2; }
+  10% { opacity: 1; }
+  45% { opacity: 0.75; }
+  47% { opacity: 0.15; }
+  50% { opacity: 0.95; }
+}
+.amb-neon {
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 6px 1px currentColor, 0 0 18px 4px currentColor;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambience { display: none; }
+}
